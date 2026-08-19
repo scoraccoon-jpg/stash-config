@@ -1,0 +1,98 @@
+name: Stash Friend Lite v1.0
+
+proxy-groups: #!replace
+
+- name: "🚀 节点选择"
+  type: select
+  include-all: true
+
+
+rules: #!replace
+
+
+# ==========================
+# iCloud 直连
+# ==========================
+
+- DOMAIN-SUFFIX,icloud.com,DIRECT
+- DOMAIN-SUFFIX,icloud-content.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com.cn,DIRECT
+
+
+# ==========================
+# 微信 / 腾讯直连
+# ==========================
+
+- DOMAIN-SUFFIX,wechat.com,DIRECT
+- DOMAIN-SUFFIX,weixin.qq.com,DIRECT
+- DOMAIN-SUFFIX,wx.qq.com,DIRECT
+- DOMAIN-SUFFIX,qpic.cn,DIRECT
+- DOMAIN-SUFFIX,qlogo.cn,DIRECT
+- DOMAIN-SUFFIX,gtimg.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+
+- IP-CIDR,43.160.0.0/16,DIRECT,no-resolve
+- IP-CIDR,43.163.0.0/16,DIRECT,no-resolve
+- IP-CIDR,101.32.0.0/16,DIRECT,no-resolve
+
+
+# ==========================
+# 国内 App
+# ==========================
+
+- DOMAIN-SUFFIX,xiaohongshu.com,DIRECT
+- DOMAIN-SUFFIX,xhscdn.com,DIRECT
+
+- DOMAIN-SUFFIX,bilibili.com,DIRECT
+- DOMAIN-SUFFIX,bilivideo.com,DIRECT
+- DOMAIN-SUFFIX,hdslb.com,DIRECT
+
+
+# ==========================
+# Apple AI / Siri
+# ==========================
+
+- DOMAIN,guzzoni.apple.com,🚀 节点选择
+- DOMAIN,smoot.apple.com,🚀 节点选择
+- DOMAIN,gsp-ssl.ls.apple.com,🚀 节点选择
+- DOMAIN,gspel-ssl.ls.apple.com,🚀 节点选择
+
+
+# ==========================
+# OpenAI
+# ==========================
+
+- DOMAIN-SUFFIX,openai.com,🚀 节点选择
+- DOMAIN-SUFFIX,chatgpt.com,🚀 节点选择
+- DOMAIN-SUFFIX,oaistatic.com,🚀 节点选择
+- DOMAIN-SUFFIX,oaiusercontent.com,🚀 节点选择
+
+
+# ==========================
+# Telegram
+# ==========================
+
+- DOMAIN-SUFFIX,telegram.org,🚀 节点选择
+- DOMAIN-SUFFIX,t.me,🚀 节点选择
+
+
+# ==========================
+# Apple CDN / 更新
+# ==========================
+
+- DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+- DOMAIN,mesu.apple.com,DIRECT
+
+
+# ==========================
+# 中国大陆
+# ==========================
+
+- GEOIP,CN,DIRECT
+
+
+# ==========================
+# 其他全部海外
+# ==========================
+
+- MATCH,🚀 节点选择
